@@ -4,7 +4,7 @@ import Navbar from "@/app/components/navebar"
 
 export default function Home(){
   return(
-    <div className="bg-white min-h-screen ">
+    <div className="bg-slate-900 min-h-screen ">
       <Navbar/>
       <h1 className="text-gray-800 text-center font-semibold text-2xl">hello world</h1>
     </div>
