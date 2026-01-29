@@ -1,26 +1,19 @@
-import { useEffect,useState } from "react";
+import { useEffect, useState } from "react";
 
+export default function useTypingEffect(text, speed = 80) {
+  const [displayed, setDisplayed] = useState("");
+  const [index, setIndex] = useState(0);
 
-export default function useTypingEffect (text,speed =120){
-    const words = text.split("");
-    const [displayed, setDisplayed] = useState("");
-    const [index,setIndex] = useState(0);
+  useEffect(() => {
+    if (index < text.length) {
+      const timeout = setTimeout(() => {
+        setDisplayed(prev => prev + text[index]);
+        setIndex(index + 1);
+      }, speed);
 
-    useEffect(() =>{
+      return () => clearTimeout(timeout);
+    }
+  }, [index, text, speed]);
 
-        if(index<words.length){
-            const timeout = setTimeout(() =>{
-
-                setDisplayed((prev) => prev + words[index] + "");
-                setIndex(index +1);
-
-            },speed);
-
-            return () => clearTimeout(timeout);
-            
-        }
-
-    },[index,words,speed]);
-    
-    return displayed;
+  return displayed;
 }
