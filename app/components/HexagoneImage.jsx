@@ -1,33 +1,33 @@
 "use client";
-
 import Image from "next/image";
 
 export default function HexagonImage() {
   return (
     <div className="relative">
-      {/* Glow */}
-      <div className="absolute inset-0 bg-cyan-400 blur-3xl opacity-40 rounded-full"></div>
 
-      {/* Hexagon */}
+      {/* outer glow */}
+      <div className="absolute inset-0 bg-cyan-400 blur-[80px] opacity-60 rounded-full"></div>
+
+      {/* neon border */}
       <div
-        className="w-64 h-72 bg-cyan-400 p-1"
+        className="w-[300px] h-[340px] p-[3px] bg-gradient-to-b from-cyan-300 to-cyan-500"
         style={{
           clipPath:
-            "polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%)",
+            "polygon(25% 5%, 75% 5%, 100% 50%, 75% 95%, 25% 95%, 0% 50%)",
         }}
       >
         <div
           className="w-full h-full bg-[#121826]"
           style={{
             clipPath:
-              "polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%)",
+              "polygon(25% 5%, 75% 5%, 100% 50%, 75% 95%, 25% 95%, 0% 50%)",
           }}
         >
           <Image
-            src="/profile.png" // put image in public folder
-            alt="Profile"
-            width={400}
-            height={400}
+            src="/imtisal.png"
+            alt="profile"
+            width={500}
+            height={500}
             className="object-cover w-full h-full"
           />
         </div>
